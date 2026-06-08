@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Download } from 'lucide-react'
 import { navItems, profile, socials } from '../../data/portfolio'
 import { fadeUp, stagger } from '../../lib/motion'
 import { ButtonLink, Pill } from '../ui'
@@ -55,9 +55,20 @@ export function Hero() {
           <motion.div variants={fadeUp} className="max-w-[22rem]">
             <h1 className="text-[clamp(1.55rem,2.5vw,2.45rem)] font-semibold leading-[1.02] tracking-normal">{profile.role}</h1>
             <p className="mt-3 text-[clamp(0.82rem,1vw,0.95rem)] leading-6 text-black/62">{profile.intro}</p>
-            <ButtonLink href={profile.emailHref} target="_blank" rel="noreferrer" className="mt-4 w-full px-4 py-2.5 text-xs sm:w-max">
-              Let&apos;s collaborate
-            </ButtonLink>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href={profile.emailHref} target="_blank" rel="noreferrer" className="w-full px-4 py-2.5 text-xs sm:w-max">
+                Let&apos;s collaborate
+              </ButtonLink>
+              <ButtonLink
+                href={profile.resumeHref}
+                download="Ajay-Kumar-Resume.pdf"
+                icon={Download}
+                variant="light"
+                className="w-full px-4 py-2.5 text-xs sm:w-max"
+              >
+                Download Resume
+              </ButtonLink>
+            </div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="grid gap-3 sm:grid-cols-2 md:grid-cols-1 md:justify-items-end">
@@ -65,6 +76,8 @@ export function Hero() {
               <a
                 key={label}
                 href={href}
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white/85 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.07)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 md:w-[min(100%,12rem)]"
               >
                 <Icon size={15} />

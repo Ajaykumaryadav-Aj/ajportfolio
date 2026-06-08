@@ -43,7 +43,7 @@ export function Pill({ children, className = '' }) {
   )
 }
 
-export function ButtonLink({ href, children, variant = 'dark', className = '', target, rel }) {
+export function ButtonLink({ href, children, variant = 'dark', className = '', target, rel, download, icon: Icon = ArrowUpRight, ariaLabel }) {
   const classes =
     variant === 'dark'
       ? '!bg-[#202020] !text-white shadow-[0_12px_24px_rgba(0,0,0,0.24)] hover:!bg-black'
@@ -54,13 +54,15 @@ export function ButtonLink({ href, children, variant = 'dark', className = '', t
       href={href}
       target={target}
       rel={rel}
+      download={download}
+      aria-label={ariaLabel}
       whileHover={{ y: -2, scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${classes} ${className}`}
     >
       <span className="relative z-10">{children}</span>
-      <ArrowUpRight className="relative z-10 shrink-0" size={16} />
+      <Icon className="relative z-10 shrink-0" size={16} />
     </motion.a>
   )
 }

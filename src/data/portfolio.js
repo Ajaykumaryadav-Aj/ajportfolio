@@ -1,12 +1,12 @@
 import {
   Braces,
-  Code2,
   CircleDot,
+  Code2,
   Globe2,
   Layers3,
+  Mail,
   Palette,
   Smartphone,
-  Send,
   Sparkles,
   Users,
 } from 'lucide-react'
@@ -18,11 +18,15 @@ export const profile = {
   role: 'Frontend Developer',
   badge: 'Available for New Project',
   intro:
-    'Building scalable web and mobile applications with a focus on performance, responsive design, and exceptional user experiences.',
+    'Building responsive React and Flutter experiences with clean UI systems, fast-loading pages, and practical product thinking.',
   email: 'ajaykumaraky075@gmail.com',
+  mailtoHref:
+    'mailto:ajaykumaraky075@gmail.com?subject=Project%20Inquiry&body=Hi%20Ajay%2C%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you.',
   emailHref:
     'https://mail.google.com/mail/?view=cm&fs=1&to=ajaykumaraky075@gmail.com&su=Project%20Inquiry&body=Hi%20Ajay%2C%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you.',
-  experience: '1 year Frontend Developer experience + 9 months Flutter Developer experience',
+  resumeHref: '/resume.pdf',
+  location: 'India',
+  experience: '1 year React/front-end experience + 9 months Flutter development experience',
 }
 
 export const navItems = [
@@ -35,18 +39,24 @@ export const navItems = [
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/ajaykumaryadav-Aj', icon: CircleDot },
-  { label: 'Instagram', href: 'https://instagram.com/', icon: Send },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ajay-kumar-8910aa261', icon: Users },
-  { label: 'Dribbble', href: 'https://dribbble.com/ajaykumaraky075', icon: Globe2 },
+  { label: 'Email', href: profile.mailtoHref, icon: Mail },
 ]
 
 export const projects = [
   {
-    title: 'Viralstan - SEO, SMM & Web Development Website',
-    category: 'Marketing Website',
+    title: 'Viralstan - Company Website',
+    category: 'Company Website',
     kicker: 'SEO, SMM, Web Dev',
     description:
-      'Built a responsive company website for Viralstan, a digital marketing agency focused on SEO, social media marketing, paid ads, branding, and web development.',
+      'Worked with Viralstan and built their responsive company website for SEO, social media marketing, paid ads, branding, and web development services.',
+    role: 'Frontend Developer at Viralstan - website development, responsive UI, service-page structure',
+    timeline: 'Company Project',
+    impact: [
+      'Built Viralstan website pages for agency discovery and service presentation.',
+      'Structured content around SEO, SMM, paid ads, branding, and web development services.',
+      'Created reusable React and Tailwind UI sections for cleaner future updates.',
+    ],
     tags: ['SEO', 'SMM', 'Digital Marketing', 'React.js', 'Tailwind CSS'],
     href: 'https://viralstan.com/',
     logo: viralstanLogo,
@@ -58,7 +68,14 @@ export const projects = [
     category: 'Live Project',
     kicker: 'Realtime Chat UI',
     description:
-      'Built a clean messaging interface with responsive layouts, reusable React components, and Tailwind CSS styling.',
+      'Built a clean messaging interface focused on readable chat states, responsive layouts, reusable React components, and deployment-ready styling.',
+    role: 'React UI development, component layout, responsive interaction states',
+    timeline: 'Live Demo',
+    impact: [
+      'Designed a focused messaging flow that works across desktop and mobile.',
+      'Separated chat UI into reusable interface pieces.',
+      'Deployed the project for quick client and recruiter review.',
+    ],
     tags: ['React.js', 'Tailwind CSS', 'Vercel'],
     href: 'https://chat-app-opal-sigma.vercel.app/',
     accent: 'from-emerald-400 to-violet-500',
@@ -135,28 +152,28 @@ export const skills = [
 
 export const experience = [
   {
-    company: 'Frontend Developer',
-    role: 'Developing modern web applications with React.js, JavaScript, HTML, CSS, and Tailwind CSS.',
-    period: '1 Year',
+    company: 'Viralstan',
+    role: 'Worked as a frontend developer and built Viralstan company website with React.js, Tailwind CSS, and responsive service pages.',
+    period: 'Company Work',
   },
   {
-    company: 'React.js Development',
-    role: 'Building reusable components, responsive interfaces, clean application logic, and scalable frontend structure.',
+    company: 'Production UI Delivery',
+    role: 'Built reusable components, clean layouts, polished hover states, and scalable front-end structure.',
     period: 'Web Apps',
   },
   {
-    company: 'Flutter Developer',
-    role: 'Creating cross-platform mobile application screens and app flows with Flutter and Dart.',
+    company: 'Flutter Mobile Development',
+    role: 'Created cross-platform mobile screens, responsive widgets, and practical app flows with Flutter and Dart.',
     period: '9 Months',
   },
   {
     company: 'API & Data Integration',
-    role: 'Integrating REST APIs, Firebase, Firestore, and managing application data efficiently.',
+    role: 'Integrated REST APIs, Firebase, Firestore, and client-side data handling for application workflows.',
     period: 'Backend Data',
   },
   {
     company: 'Performance & Architecture',
-    role: 'Focused on clean code, performance optimization, responsive design, and scalable application architecture.',
+    role: 'Focused on clean code, performance optimization, accessibility basics, and maintainable UI architecture.',
     period: 'Core Focus',
   },
 ]

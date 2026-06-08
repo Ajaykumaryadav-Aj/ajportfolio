@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, Copy } from 'lucide-react'
+import { Check, Copy, Download } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profile, socials } from '../../data/portfolio'
 import { fadeUp, stagger } from '../../lib/motion'
@@ -9,9 +9,17 @@ export function Contact() {
   const [copied, setCopied] = useState(false)
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText(profile.email)
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 1600)
+    try {
+      if (!navigator.clipboard) {
+        throw new Error('Clipboard is not available')
+      }
+
+      await navigator.clipboard.writeText(profile.email)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1600)
+    } catch {
+      window.location.href = profile.mailtoHref
+    }
   }
 
   return (
@@ -37,13 +45,22 @@ export function Contact() {
           Together, we can create something clear and impactful. Let&apos;s collaborate to bring your ideas to life in a
           way that resonates with everyone.
         </motion.p>
-        <motion.div variants={fadeUp} className="mt-8">
+        <motion.div variants={fadeUp} className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <ButtonLink href={profile.emailHref} target="_blank" rel="noreferrer" className="w-full sm:w-auto">
             Contact Me
           </ButtonLink>
+          <ButtonLink
+            href={profile.resumeHref}
+            download="Ajay-Kumar-Resume.pdf"
+            icon={Download}
+            variant="light"
+            className="w-full sm:w-auto"
+          >
+            Download Resume
+          </ButtonLink>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="mt-[clamp(3rem,6vw,6rem)] grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <motion.div variants={fadeUp} className="mt-[clamp(3rem,6vw,6rem)] grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full !bg-[#202020] px-4 py-3 text-sm font-semibold !text-white shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
             <span className="grid h-6 w-6 place-items-center rounded-full bg-white text-xs text-[#202020]">AJ</span>
             {profile.firstName} {profile.lastName}
@@ -52,6 +69,8 @@ export function Contact() {
             <a
               key={label}
               href={href}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Icon size={15} />
