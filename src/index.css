@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter, "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202020;
+  background: #f8f8f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.95), transparent 42%),
+    #f8f8f6;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.42;
+  background-image:
+    linear-gradient(rgba(32, 32, 32, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 32, 32, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root {
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+span {
+  min-width: 0;
+}
+
+::selection {
+  color: #ffffff;
+  background: #202020;
+}
+
+.cloud-bg {
+  background:
+    radial-gradient(ellipse at 16% 22%, rgba(255, 255, 255, 0.96) 0 18%, transparent 34%),
+    radial-gradient(ellipse at 86% 16%, rgba(255, 255, 255, 0.92) 0 19%, transparent 35%),
+    radial-gradient(ellipse at 20% 88%, rgba(255, 255, 255, 0.97) 0 18%, transparent 34%),
+    radial-gradient(ellipse at 78% 92%, rgba(255, 255, 255, 0.92) 0 19%, transparent 35%),
+    linear-gradient(180deg, #f8f8f6, #eeeeeb);
+}
+
+.hero-stage {
+  container-type: inline-size;
+}
+
+.hero-wordmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.08em;
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(3.4rem, 12.25cqw, 9.8rem);
+  line-height: 0.86;
+  white-space: nowrap;
+}
+
+.hero-wordmark-outline {
+  -webkit-text-stroke: clamp(1px, 0.12cqw, 1.7px) #202020;
+}
+
+@media (max-width: 380px) {
+  .hero-wordmark {
+    font-size: clamp(3.75rem, 21vw, 5rem);
+    letter-spacing: -0.03em;
+  }
+
+  .hero-wordmark-solid {
+    margin-left: 0.035em;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-wordmark {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+    font-size: clamp(4rem, 19.5vw, 7rem);
+    line-height: 0.75;
+    white-space: normal;
+  }
+
+  .hero-wordmark-outline,
+  .hero-wordmark-solid {
+    display: block;
+  }
+
+  .hero-wordmark-solid {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-wordmark {
+    font-size: clamp(6rem, 13vw, 8.75rem);
+  }
+}
+
+@media (min-width: 1920px) {
+  body::before {
+    background-size: 64px 64px;
+  }
+}
+
+@supports (text-wrap: balance) {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 640px) {
+  .cloud-bg {
+    background:
+      radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.94) 0 14%, transparent 32%),
+      radial-gradient(ellipse at 88% 92%, rgba(255, 255, 255, 0.9) 0 16%, transparent 34%),
+      linear-gradient(180deg, #f8f8f6, #eeeeeb);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
