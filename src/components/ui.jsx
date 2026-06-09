@@ -10,19 +10,19 @@ export function Section({ id, eyebrow, title, dark = false, children, className 
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.18 }}
-      className={`relative overflow-hidden px-[clamp(1rem,3vw,4.5rem)] py-[clamp(4.5rem,8vw,8rem)] ${dark ? 'bg-[#252525] text-white' : 'bg-[#f8f8f6] text-[#202020]'} ${className}`}
+      className={`container-pad section-pad relative overflow-hidden ${dark ? 'bg-[#252525] text-white' : 'bg-[#f8f8f6] text-[#202020]'} ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1180px]">
+      <div className="mx-auto w-full max-w-[1180px] min-w-0">
         {title ? (
-          <motion.div variants={fadeUp} className="relative mb-[clamp(2.75rem,5vw,5rem)] text-center">
+          <motion.div variants={fadeUp} className="relative mb-[clamp(2rem,5vw,5rem)] min-w-0 text-center">
             <p
-              className={`pointer-events-none absolute inset-x-0 top-1/2 -translate-y-[72%] text-[clamp(4.5rem,13vw,12rem)] font-black uppercase leading-none tracking-normal ${
+              className={`pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-[72%] text-[clamp(3.35rem,13vw,12rem)] font-black uppercase leading-none tracking-normal sm:block ${
                 dark ? 'text-white/[0.035]' : 'text-black/[0.035]'
               }`}
             >
               {eyebrow}
             </p>
-            <h2 className="relative text-[clamp(2.35rem,5.2vw,5.25rem)] font-semibold uppercase leading-[0.95] tracking-normal">
+            <h2 className="relative mx-auto max-w-[12ch] text-[clamp(2rem,5.2vw,5.25rem)] font-semibold uppercase leading-[0.95] tracking-normal sm:max-w-none">
               /{title}
             </h2>
           </motion.div>
@@ -36,7 +36,7 @@ export function Section({ id, eyebrow, title, dark = false, children, className 
 export function Pill({ children, className = '' }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3 py-1.5 text-xs font-medium text-[#202020] shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur ${className}`}
+      className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-black/10 bg-white/80 px-3 py-1.5 text-xs font-medium text-[#202020] shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur ${className}`}
     >
       {children}
     </span>
@@ -59,9 +59,9 @@ export function ButtonLink({ href, children, variant = 'dark', className = '', t
       whileHover={{ y: -2, scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${classes} ${className}`}
+      className={`inline-flex min-h-11 min-w-0 max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-semibold leading-tight transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${classes} ${className}`}
     >
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 min-w-0 whitespace-nowrap">{children}</span>
       <Icon className="relative z-10 shrink-0" size={16} />
     </motion.a>
   )

@@ -29,16 +29,16 @@ export function Contact() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="cloud-bg relative overflow-hidden bg-[#f8f8f6] px-[clamp(1rem,3vw,4.5rem)] py-[clamp(5rem,9vw,9rem)] text-center text-[#202020]"
+      className="cloud-bg container-pad relative overflow-hidden bg-[#f8f8f6] py-[clamp(4rem,9vw,9rem)] text-center text-[#202020]"
     >
-      <div className="mx-auto w-full max-w-[1180px]">
+      <div className="mx-auto w-full max-w-[1180px] min-w-0">
         <motion.div variants={fadeUp}>
           <Pill>
             <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_14px_rgba(16,185,129,0.7)]" />
             {profile.badge}
           </Pill>
         </motion.div>
-        <motion.h2 variants={fadeUp} className="mx-auto mt-8 max-w-5xl text-[clamp(2.25rem,6vw,6rem)] font-semibold uppercase leading-[0.98] tracking-normal">
+        <motion.h2 variants={fadeUp} className="mx-auto mt-8 max-w-5xl text-[clamp(2rem,11vw,6rem)] font-semibold uppercase leading-[0.98] tracking-normal">
           Have a project in mind?
         </motion.h2>
         <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-[clamp(0.92rem,1.2vw,1.1rem)] leading-7 text-black/62">
@@ -60,10 +60,10 @@ export function Contact() {
           </ButtonLink>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="mt-[clamp(3rem,6vw,6rem)] grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full !bg-[#202020] px-4 py-3 text-sm font-semibold !text-white shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
+        <motion.div variants={fadeUp} className="mt-[clamp(3rem,6vw,6rem)] grid min-w-0 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="inline-flex min-h-11 min-w-0 items-center justify-center gap-2 rounded-full !bg-[#202020] px-4 py-3 text-sm font-semibold !text-white shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
             <span className="grid h-6 w-6 place-items-center rounded-full bg-white text-xs text-[#202020]">AJ</span>
-            {profile.firstName} {profile.lastName}
+            <span className="min-w-0">{profile.firstName} {profile.lastName}</span>
           </div>
           {socials.map(({ label, href, icon: Icon }) => (
             <a
@@ -71,7 +71,7 @@ export function Contact() {
               href={href}
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex min-h-11 min-w-0 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Icon size={15} />
               {label}
@@ -83,10 +83,10 @@ export function Contact() {
           variants={fadeUp}
           type="button"
           onClick={copyEmail}
-          className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 sm:w-auto"
+          className="mt-5 inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-3 text-sm font-semibold text-[#202020] shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 sm:w-auto"
         >
-          {copied ? <Check size={15} /> : <Copy size={15} />}
-          {copied ? 'Copied!' : profile.email}
+          {copied ? <Check className="shrink-0" size={15} /> : <Copy className="shrink-0" size={15} />}
+          <span className="min-w-0 break-all">{copied ? 'Copied!' : profile.email}</span>
         </motion.button>
       </div>
     </motion.section>

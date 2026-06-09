@@ -61,6 +61,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -75,8 +76,9 @@ h3,
 p,
 a,
 button,
-span {
+li {
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 ::selection {
@@ -109,14 +111,27 @@ span {
   white-space: nowrap;
 }
 
+.container-pad {
+  padding-inline: clamp(1rem, 4vw, 4.5rem);
+}
+
+.section-pad {
+  padding-block: clamp(3.75rem, 8vw, 8rem);
+}
+
+@media (max-width: 767px) {
+  .section-pad {
+    padding-block: clamp(3.25rem, 14vw, 5rem);
+  }
+}
+
 .hero-wordmark-outline {
   -webkit-text-stroke: clamp(1px, 0.12cqw, 1.7px) #202020;
 }
 
 @media (max-width: 380px) {
   .hero-wordmark {
-    font-size: clamp(3.75rem, 21vw, 5rem);
-    letter-spacing: -0.03em;
+    font-size: clamp(2.9rem, 15vw, 3.6rem);
   }
 
   .hero-wordmark-solid {
@@ -128,9 +143,9 @@ span {
   .hero-wordmark {
     flex-direction: column;
     gap: 0;
-    align-items: stretch;
-    font-size: clamp(4rem, 19.5vw, 7rem);
-    line-height: 0.75;
+    align-items: center;
+    font-size: clamp(3rem, 15.2vw, 5.8rem);
+    line-height: 0.82;
     white-space: normal;
   }
 
@@ -146,7 +161,13 @@ span {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-wordmark {
-    font-size: clamp(6rem, 13vw, 8.75rem);
+    font-size: clamp(5rem, 11vw, 7.25rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-wordmark {
+    font-size: clamp(6.5rem, 10.2cqw, 7.75rem);
   }
 }
 
@@ -165,6 +186,10 @@ span {
 }
 
 @media (max-width: 640px) {
+  body::before {
+    background-size: 34px 34px;
+  }
+
   .cloud-bg {
     background:
       radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.94) 0 14%, transparent 32%),

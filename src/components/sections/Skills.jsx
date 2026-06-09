@@ -6,21 +6,21 @@ import { Section } from '../ui'
 export function Skills() {
   return (
     <Section id="skills" eyebrow="Stack" title="Skills" className="bg-white">
-      <motion.div variants={stagger} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div variants={stagger} className="grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {skills.map(({ name, level, description, icon: Icon }) => (
           <motion.article
             key={name}
             variants={fadeUp}
             whileHover={{ y: -6 }}
             transition={{ type: 'spring', stiffness: 240, damping: 20 }}
-            className="group relative overflow-hidden rounded-md border border-black/10 bg-[#f8f8f6] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.06)]"
+            className="group relative min-w-0 overflow-hidden rounded-md border border-black/10 bg-[#f8f8f6] p-[clamp(1rem,2vw,1.25rem)] shadow-[0_18px_45px_rgba(0,0,0,0.06)]"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(0,0,0,0.055),transparent_26%)] opacity-0 transition duration-500 group-hover:opacity-100" />
             <div className="relative flex items-start justify-between gap-4">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#202020] text-white shadow-[0_14px_28px_rgba(0,0,0,0.18)]">
                 <Icon size={20} />
               </span>
-              <span className="rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold text-black/60">
+              <span className="min-w-0 rounded-full border border-black/10 bg-white px-3 py-1.5 text-right text-xs font-semibold leading-tight text-black/60">
                 {level}
               </span>
             </div>

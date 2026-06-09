@@ -8,14 +8,14 @@ function ProjectMockup({ project }) {
   const Icon = project.icon
 
   return (
-    <div className="relative h-[clamp(17rem,36vw,27rem)] overflow-hidden rounded-sm border border-black/10 bg-[#151515] p-[clamp(0.9rem,1.5vw,1.35rem)] shadow-[0_28px_70px_rgba(0,0,0,0.16)] transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_36px_90px_rgba(0,0,0,0.22)]">
+    <div className="relative h-[clamp(16rem,56vw,27rem)] overflow-hidden rounded-sm border border-black/10 bg-[#151515] p-[clamp(0.85rem,1.5vw,1.35rem)] shadow-[0_28px_70px_rgba(0,0,0,0.16)] transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_36px_90px_rgba(0,0,0,0.22)] md:h-[clamp(18rem,36vw,27rem)]">
       <div className={`absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t ${project.accent} opacity-70 blur-2xl`} />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),transparent_34%),radial-gradient(circle_at_50%_78%,rgba(255,255,255,0.18),transparent_28%)]" />
       <div className="relative flex items-center justify-between gap-2 text-[clamp(0.58rem,0.75vw,0.72rem)] font-semibold uppercase text-white/70">
         <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1">{project.category}</span>
         <span className="hidden sm:inline">{project.href ? 'Live Site' : 'Case Study 2026'}</span>
       </div>
-      <div className="relative mt-[clamp(1.75rem,3vw,3rem)] max-w-[72%]">
+      <div className="relative mt-[clamp(1.4rem,3vw,3rem)] max-w-[82%] sm:max-w-[72%]">
         <div className="mb-4 inline-flex rounded-full border border-white/15 px-3 py-1 text-[clamp(0.58rem,0.75vw,0.72rem)] text-white/70">
           {project.kicker || 'Featured Build'}
         </div>
@@ -28,7 +28,7 @@ function ProjectMockup({ project }) {
           <img
             src={project.logo}
             alt={`${project.title.split(' - ')[0]} logo`}
-            className="relative h-[clamp(13rem,28vw,21rem)] w-[min(76%,clamp(13rem,30vw,22rem))] object-contain drop-shadow-[0_26px_45px_rgba(0,0,0,0.35)] transition duration-500 group-hover:scale-105"
+            className="relative h-[clamp(9.5rem,44vw,21rem)] w-[min(78%,clamp(11rem,40vw,22rem))] object-contain drop-shadow-[0_26px_45px_rgba(0,0,0,0.35)] transition duration-500 group-hover:scale-105 md:h-[clamp(10.5rem,28vw,21rem)]"
           />
         </div>
       ) : (
@@ -52,7 +52,7 @@ function ProjectMockup({ project }) {
       ) : null}
 
       {!project.logo ? (
-        <div className="absolute right-3 top-[clamp(4rem,7vw,6rem)] grid gap-2 sm:right-6">
+        <div className="absolute right-3 top-[clamp(4rem,7vw,6rem)] grid scale-90 gap-2 origin-top-right sm:right-6 sm:scale-100">
           <div className="h-[clamp(5rem,8vw,7rem)] w-[clamp(6.5rem,10vw,9rem)] rounded-sm bg-white/92 p-3">
             <BarChart3 size={18} />
             <div className="mt-6 h-2 w-2/3 rounded bg-black/15" />
@@ -64,7 +64,7 @@ function ProjectMockup({ project }) {
       ) : null}
       <motion.span
         whileHover={{ scale: 1.08, rotate: 8 }}
-        className="absolute right-[clamp(1rem,2vw,1.5rem)] top-1/2 grid h-[clamp(2.75rem,4vw,3.5rem)] w-[clamp(2.75rem,4vw,3.5rem)] place-items-center rounded-full bg-white text-black shadow-xl"
+        className="absolute bottom-[clamp(1rem,2vw,1.5rem)] right-[clamp(1rem,2vw,1.5rem)] grid h-[clamp(2.75rem,4vw,3.5rem)] w-[clamp(2.75rem,4vw,3.5rem)] place-items-center rounded-full bg-white text-black shadow-xl sm:bottom-auto sm:top-1/2"
       >
         <ArrowUpRight size={18} />
       </motion.span>
@@ -75,15 +75,15 @@ function ProjectMockup({ project }) {
 export function Work() {
   return (
     <Section id="work" eyebrow="Portfolio" title="Selected Work" className="bg-white">
-      <motion.div variants={fadeUp} className="mb-8 flex flex-wrap items-center justify-end gap-4">
+      <motion.div variants={fadeUp} className="mb-8 flex flex-wrap items-center justify-center gap-4 sm:justify-end">
         <ButtonLink href="#contact" variant="light" className="w-full px-4 py-2.5 text-xs sm:w-auto">
           Start a Project
         </ButtonLink>
       </motion.div>
 
-      <motion.div variants={stagger} className="grid gap-x-[clamp(2rem,4vw,4.5rem)] gap-y-[clamp(2.5rem,5vw,5rem)] md:grid-cols-2">
+      <motion.div variants={stagger} className="grid min-w-0 gap-x-[clamp(2rem,4vw,4.5rem)] gap-y-[clamp(2.5rem,5vw,5rem)] lg:grid-cols-2">
         {projects.map((project) => (
-          <motion.article key={project.title} variants={fadeUp} className="group">
+          <motion.article key={project.title} variants={fadeUp} className="group min-w-0">
             <a
               href={project.href}
               target="_blank"
@@ -95,12 +95,12 @@ export function Work() {
             </a>
             <div className="mt-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <h3 className="max-w-xl text-[clamp(1.1rem,1.8vw,1.6rem)] font-semibold leading-tight">{project.title}</h3>
+                <h3 className="min-w-0 max-w-xl text-[clamp(1.1rem,1.8vw,1.6rem)] font-semibold leading-tight">{project.title}</h3>
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-full bg-[#202020] px-3 py-2 text-xs font-semibold text-white shadow-[0_10px_22px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
+                  className="inline-flex min-h-9 w-full items-center justify-center gap-2 rounded-full bg-[#202020] px-3 py-2 text-xs font-semibold text-white shadow-[0_10px_22px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 sm:w-auto sm:shrink-0"
                 >
                   Live Site
                   <ArrowUpRight size={14} />
@@ -108,7 +108,7 @@ export function Work() {
               </div>
               <p className="mt-2 max-w-xl text-sm leading-6 text-black/58">{project.description}</p>
 
-              <div className="mt-4 grid gap-3 rounded-md border border-black/10 bg-[#f8f8f6] p-4 text-sm text-black/62">
+              <div className="mt-4 grid min-w-0 gap-3 rounded-md border border-black/10 bg-[#f8f8f6] p-4 text-sm leading-6 text-black/62">
                 <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
                   <p>
                     <span className="font-semibold text-[#202020]">Role:</span> {project.role}
