@@ -100,7 +100,7 @@ export function Work() {
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-9 w-full items-center justify-center gap-2 rounded-full bg-[#202020] px-3 py-2 text-xs font-semibold text-white shadow-[0_10px_22px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 sm:w-auto sm:shrink-0"
+                  className="inline-flex min-h-9 w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-semibold text-[#202020] shadow-[0_10px_22px_rgba(0,0,0,0.08)] transition hover:-translate-y-0.5 hover:border-black/20 hover:bg-[#f8f8f6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 sm:w-auto sm:shrink-0"
                 >
                   Live Site
                   <ArrowUpRight size={14} />
