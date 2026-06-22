@@ -61,7 +61,7 @@ export function Hero() {
               </ButtonLink>
               <ButtonLink
                 href={profile.resumeHref}
-                download="Ajay-Kumar-Resume.pdf"
+                download="ajaykumar.pdf"
                 icon={Download}
                 variant="light"
                 className="w-full px-4 py-2.5 text-xs sm:w-max"

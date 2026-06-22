@@ -51,7 +51,7 @@ export function Contact() {
           </ButtonLink>
           <ButtonLink
             href={profile.resumeHref}
-            download="Ajay-Kumar-Resume.pdf"
+            download="ajaykumar.pdf"
             icon={Download}
             variant="light"
             className="w-full sm:w-auto"

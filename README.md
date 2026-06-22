@@ -8,7 +8,7 @@ Personal portfolio for Ajay Kumar, a frontend developer focused on React.js, Tai
 - Selected work section with richer project details and live project links.
 - Service, skills, experience, and contact sections built with reusable React components.
 - SEO-friendly document metadata, Open Graph tags, and structured person data.
-- Resume download points to `/resume.pdf`, so the live resume updates by replacing `public/resume.pdf`.
+- Resume download points to the Vite public asset `ajaykumar.pdf`, so the live resume updates by replacing `public/ajaykumar.pdf`.
 
 ## Tech Stack
 
@@ -58,7 +58,7 @@ src/
   lib/
     motion.js      Shared Framer Motion variants
 public/
-  resume.pdf       Latest resume PDF used by the site buttons
+  ajaykumar.pdf    Latest resume PDF used by the site buttons
   RESUME-INSTRUCTIONS.md
   ajay-kumar-resume.html
 ```
@@ -68,10 +68,10 @@ public/
 Add or replace this file:
 
 ```text
-public/resume.pdf
+public/ajaykumar.pdf
 ```
 
-Keep the filename exactly `resume.pdf`. The portfolio buttons already use this path, so no React code changes are needed for future resume updates.
+Keep the filename exactly `ajaykumar.pdf`. The portfolio buttons already use this path, so no React code changes are needed for future resume updates.
 
 ## Deployment
 

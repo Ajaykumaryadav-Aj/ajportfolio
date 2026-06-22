@@ -12,6 +12,8 @@ import {
 } from 'lucide-react'
 import viralstanLogo from '../assets/viralstan-logo.png'
 
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`
+
 export const profile = {
   firstName: 'AJAY',
   lastName: 'KUMAR',
@@ -24,7 +26,7 @@ export const profile = {
     'mailto:ajaykumaraky075@gmail.com?subject=Project%20Inquiry&body=Hi%20Ajay%2C%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you.',
   emailHref:
     'https://mail.google.com/mail/?view=cm&fs=1&to=ajaykumaraky075@gmail.com&su=Project%20Inquiry&body=Hi%20Ajay%2C%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you.',
-  resumeHref: '/resume.pdf',
+  resumeHref: publicAsset('ajaykumar.pdf'),
   location: 'India',
   experience: '1 year React/front-end experience + 9 months Flutter development experience',
 }
