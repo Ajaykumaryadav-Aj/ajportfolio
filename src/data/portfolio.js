@@ -83,6 +83,34 @@ export const projects = [
     accent: 'from-emerald-400 to-violet-500',
     icon: Code2,
   },
+  {
+  title: 'Skills Learning Tracker',
+  category: 'Full Stack MERN Application',
+  kicker: 'AI Powered Learning Platform',
+  description:
+    'Built a production-ready MERN application that helps users track skills, manage study progress, schedule smart revisions using the SM-2 algorithm, and improve learning through AI assistance and gamification.',
+  role:
+    'Full Stack Developer - frontend, backend, authentication, database design, REST APIs, and deployment',
+  timeline: 'Personal Project',
+  impact: [
+    'Implemented JWT authentication with Email OTP verification and secure user management.',
+    'Developed gamification features including XP, streaks, badges, learning goals, and progress analytics.',
+    'Built AI learning assistant, roadmap management, SM-2 spaced repetition, and Cloudinary file uploads.',
+  ],
+  tags: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'JWT',
+    'Cloudinary',
+    'AI',
+    'Tailwind CSS'
+  ],
+  href: 'https://skills-tracker-topaz.vercel.app/',
+  accent: 'from-blue-500 to-cyan-400',
+  icon: Code2,
+},
 ]
 
 export const services = [
