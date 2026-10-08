@@ -1,4 +1,5 @@
 import {
+  Bot,
   Braces,
   CircleDot,
   Code2,
@@ -17,7 +18,7 @@ const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`
 export const profile = {
   firstName: 'AJAY',
   lastName: 'KUMAR',
-  role: 'Frontend Developer',
+  role: 'Software Developer',
   badge: 'Available for New Project',
   intro:
     'Building responsive React and Flutter experiences with clean UI systems, fast-loading pages, and practical product thinking.',
@@ -32,7 +33,7 @@ export const profile = {
 }
 
 export const navItems = [
-  { label: 'Work', href: '#work', count: '02' },
+  { label: 'Work', href: '#work', count: '04' },
   { label: 'Service', href: '#service', count: '04' },
   { label: 'Skills', href: '#skills', count: '06' },
   { label: 'Experience', href: '#experience', count: '1y+' },
@@ -84,33 +85,59 @@ export const projects = [
     icon: Code2,
   },
   {
-  title: 'Skills Learning Tracker',
-  category: 'Full Stack MERN Application',
-  kicker: 'AI Powered Learning Platform',
-  description:
-    'Built a production-ready MERN application that helps users track skills, manage study progress, schedule smart revisions using the SM-2 algorithm, and improve learning through AI assistance and gamification.',
-  role:
-    'Full Stack Developer - frontend, backend, authentication, database design, REST APIs, and deployment',
-  timeline: 'Personal Project',
-  impact: [
-    'Implemented JWT authentication with Email OTP verification and secure user management.',
-    'Developed gamification features including XP, streaks, badges, learning goals, and progress analytics.',
-    'Built AI learning assistant, roadmap management, SM-2 spaced repetition, and Cloudinary file uploads.',
-  ],
-  tags: [
-    'React.js',
-    'Node.js',
-    'Express.js',
-    'MongoDB',
-    'JWT',
-    'Cloudinary',
-    'AI',
-    'Tailwind CSS'
-  ],
-  href: 'https://skills-tracker-topaz.vercel.app/',
-  accent: 'from-blue-500 to-cyan-400',
-  icon: Code2,
-},
+    title: 'Skills Learning Tracker',
+    category: 'Full Stack MERN Application',
+    kicker: 'AI Powered Learning Platform',
+    description:
+      'Built a production-ready MERN application that helps users track skills, manage study progress, schedule smart revisions using the SM-2 algorithm, and improve learning through AI assistance and gamification.',
+    role:
+      'Full Stack Developer - frontend, backend, authentication, database design, REST APIs, and deployment',
+    timeline: 'Personal Project',
+    impact: [
+      'Implemented JWT authentication with Email OTP verification and secure user management.',
+      'Developed gamification features including XP, streaks, badges, learning goals, and progress analytics.',
+      'Built AI learning assistant, roadmap management, SM-2 spaced repetition, and Cloudinary file uploads.',
+    ],
+    tags: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT',
+      'Cloudinary',
+      'AI',
+      'Tailwind CSS'
+    ],
+    href: 'https://skills-tracker-topaz.vercel.app/',
+    accent: 'from-blue-500 to-cyan-400',
+    icon: Code2,
+  },
+  {
+    title: 'MockInterview - AI Mock Interview & ATS Platform',
+    category: 'AI Web Application',
+    kicker: 'AI Interviews & ATS Checker',
+    description:
+      'Built an intelligent AI mock interview platform and free ATS resume checker designed to help freshers and developers practice role-specific technical and HR rounds with instant feedback, scoring, and keyword analysis.',
+    role:
+      'Frontend & Full Stack Developer - interview simulation workflows, real-time evaluation UI, ATS scoring integration, and responsive design',
+    timeline: 'Live Project',
+    impact: [
+      'Engineered interactive AI interview simulations with role-specific questions, real-time feedback scoring, and STAR benchmark answers.',
+      'Developed ATS resume checker analyzing PDF/text resumes for 0-100 compatibility scores, missing keyword detection, and bullet improvements.',
+      'Created specialized interview tracks for JavaScript fundamentals, React, Frontend engineering, HR behavioral, and campus placement prep.',
+    ],
+    tags: [
+      'React.js',
+      'AI Integration',
+      'ATS Scanner',
+      'Tailwind CSS',
+      'JavaScript',
+      'Vercel'
+    ],
+    href: 'https://mocinterview.vercel.app/',
+    accent: 'from-emerald-500 to-teal-400',
+    icon: Bot,
+  },
 ]
 
 export const services = [
